@@ -16,8 +16,13 @@ const Input = styled.input`
     }
 `
 
-export default function SearchInput ({placeholder}) {
+export default function SearchInput ({placeholder, input, setInput}) {
+
+    const handleInput = (e) => {
+        setInput(e.target.value);
+    }
+
     return(
-        <Input placeholder={placeholder} />
+        <Input onChange={handleInput} value={input} placeholder={placeholder} />
     )
 }

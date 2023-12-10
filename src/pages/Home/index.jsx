@@ -4,6 +4,7 @@ import HomeSearch from "../../components/HomeSerach";
 
 
 export default function Home() {
+
     return (
         <>
             <BackgroundContainer>

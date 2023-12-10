@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;500;900&display=swap');
 
 :root{
   --color-font: #ffffff;
@@ -20,6 +20,15 @@ body {
   height: auto;
 }
 
+b{
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 h1 {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-font);
@@ -30,4 +39,17 @@ h2 {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-font);
   font-size: 20px;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-font-items);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-font-items);
+  font-size: 14px;
 }

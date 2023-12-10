@@ -5,6 +5,8 @@ import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
 import { RiEqualizerLine } from "react-icons/ri";
 import { MdExpandMore } from "react-icons/md";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Div = styled.div`
     width: 800px;
@@ -72,6 +74,9 @@ const Div = styled.div`
 `
 
 export default function HomeSearch() {
+
+    const [input, setInput] = useState('');
+
     return (
         <Div>
             <div className="image">
@@ -83,10 +88,12 @@ export default function HomeSearch() {
                     Discover all the information about Planets of the Star Wars Saga
                 </h2>
                 <form>
-                    <SearchInput placeholder="Enter the name in the planet" />
-                    <SearchButton>
-                        Search
-                    </SearchButton>
+                    <SearchInput setInput={setInput} input={input} placeholder="Enter the name in the planet" />
+                    <Link to={`/searchPage/${input}`}>
+                        <SearchButton icon='true'>
+                            Search
+                        </SearchButton>
+                    </Link>
                 </form>
                 <div className="filter">
                     <div className="icon-filter">

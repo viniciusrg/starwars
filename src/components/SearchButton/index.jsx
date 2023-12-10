@@ -23,10 +23,12 @@ const Button = styled.button`
     }
 `
 
-export default function SearchButton({ children }) {
+export default function SearchButton({ children, icon, event }) {
     return (
-        <Button>
-            <LuSearch />
+        <Button onClick={event}>
+            {
+                icon === 'true' ? <LuSearch /> : ''
+            }
             {children}
         </Button>
     )
