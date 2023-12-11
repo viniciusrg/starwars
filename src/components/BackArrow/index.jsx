@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Arrow = styled.div`
     position: absolute;
-    bottom: 12rem;
-    right: 35%;
+    bottom: -3rem;
+    right: .5rem;
     color: var(--color-font);
     font-size: 14px;
     font-weight: 500;

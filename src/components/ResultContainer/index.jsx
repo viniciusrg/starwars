@@ -14,6 +14,12 @@ const Container = styled.div`
     border-radius: 10px;
     margin: auto;
     padding: 24px 0px;
+    position: relative;
+
+    @media (max-width: 425px){
+        width: 90%;
+        padding: 16px 0px;
+    }
 `
 
 export default function ResultContainer({ planetData, setPlanetData }) {
@@ -26,7 +32,7 @@ export default function ResultContainer({ planetData, setPlanetData }) {
         setEdit(false);
     }
 
-    console.log(planetData.name)
+    // console.log(planetData.name)
 
     return (
         <Container>

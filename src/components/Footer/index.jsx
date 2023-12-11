@@ -6,9 +6,6 @@ const Container = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
     background-color: var(--color-background);
     padding-top: 19px;
     padding-bottom: 29px;
@@ -16,10 +13,17 @@ const Container = styled.footer`
     color: var(--color-font-footer);
     font-size: 14px;
     border: 1px solid var(--color-font-items);
+    box-sizing: border-box;
     
     .line{
         border-right: 1px solid var(--color-font-items);
         height: 44px;
+    }
+
+    @media (max-width: 425px){
+        .line, p{
+            display: none;
+        }
     }
 `
 

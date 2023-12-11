@@ -9,6 +9,11 @@ const Box = styled.div`
     background-color: var(--color-background-box);
     margin: auto;
     margin-bottom: 8px;
+    box-sizing: border-box;
+
+    @media (max-width: 425px){
+        width: 90%;
+    }
 
     .title{
         display: flex;

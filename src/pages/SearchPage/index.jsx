@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Background from "../../components/BackgroundContainer";
+import BackgroundContainer from "../../components/BackgroundContainer";
 import Footer from "../../components/Footer";
 import ResultContainer from "../../components/ResultContainer";
 import { getPlanet } from "../../api/getPlanet";
@@ -41,9 +41,9 @@ export default function SearchPage() {
 
     return (
         <>
-            <Background>
+            <BackgroundContainer>
                 <ResultContainer planetData={planetData} setPlanetData={setPlanetData}/>
-            </Background>
+            </BackgroundContainer>
             <Footer />
         </>
     )

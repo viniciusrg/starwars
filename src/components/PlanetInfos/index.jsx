@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import {Content} from "./styled";
 import alderaan from '../../assets/planets/alderaan.png';
 import bespin from '../../assets/planets/bespin.png';
 import coruscant from '../../assets/planets/coruscant.png';
@@ -13,56 +13,6 @@ import { FaTemperatureEmpty } from "react-icons/fa6";
 import { CgTerrain } from "react-icons/cg";
 import { FaUsers } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-
-const Content = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 38px;
-    padding: 26px;
-    box-sizing: border-box;
-    text-align: left;
-
-    .planet{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .planet h3{
-        text-transform: uppercase;
-    }
-
-    .planet h4::after{
-        content: ' ✏️';
-        cursor: pointer;
-    }
-
-    .planet .items{
-        text-align: left;
-        margin-left: 8px;
-    }
-
-    .planet-info .items{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 12px;
-    }
-
-    .planet-info p {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 14px;
-        text-transform: capitalize;
-    }
-
-    .planet-info svg {
-        font-size: 18px;
-    }
-`
 
 export default function PlanetInfos({ title, climate, terrain, population, setEdit }) {
 
@@ -127,7 +77,7 @@ export default function PlanetInfos({ title, climate, terrain, population, setEd
                     <p><b>Climate:</b> {climate}</p>
                 </div>
                 <div className="items">
-                    <CgTerrain />
+                    <CgTerrain className="icon-detail"/>
                     <p><b>Terrain:</b> {terrain}</p>
                 </div>
                 <div className="items">
