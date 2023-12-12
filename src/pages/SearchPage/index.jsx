@@ -4,10 +4,11 @@ import Footer from "../../components/Footer";
 import ResultContainer from "../../components/ResultContainer";
 import { getPlanet } from "../../api/getPlanet";
 import { useParams } from "react-router-dom";
+import { getPopulation } from "../../api/getPopulation";
 
 export default function SearchPage() {
 
-    const { planetName } = useParams();
+    const { planetInput, filter } = useParams();
 
     const [planetData, setPlanetData] = useState({
         'name': 'Caregando...',
@@ -19,15 +20,30 @@ export default function SearchPage() {
     });
 
     useEffect(() => {
-        const fetchData = async () => {
-            const data = await getPlanet(planetName);
-            setPlanetData(...data.results);
+        if (filter === 'false') {
+            // getPlanetName
+            const fetchData = async () => {
+                const data = await getPlanet(planetInput);
+                setPlanetData(...data?.results);
+            }
+
+            fetchData();
+        } else {
+            // getPopulation
+            const fetchData = async () => {
+                try {
+                    const data = await getPopulation(parseInt(planetInput));
+                    setPlanetData(...data);
+                } catch (error) {
+                    console.error('Erro ao buscar planetas por população:', error);
+                }
+            };
+
+            fetchData();
         }
+    }, [planetInput, filter]);
 
-        fetchData();
-    }, [planetName]);
-
-    if (!planetData){
+    if (!planetData) {
         setPlanetData({
             'name': 'Not found...',
             'climate': 'Not found...',
@@ -42,7 +58,7 @@ export default function SearchPage() {
     return (
         <>
             <BackgroundContainer>
-                <ResultContainer planetData={planetData} setPlanetData={setPlanetData}/>
+                <ResultContainer planetData={planetData} setPlanetData={setPlanetData} />
             </BackgroundContainer>
             <Footer />
         </>

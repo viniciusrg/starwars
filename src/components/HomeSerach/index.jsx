@@ -6,11 +6,12 @@ import { RiEqualizerLine } from "react-icons/ri";
 import { MdExpandMore } from "react-icons/md";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {Div} from './styled';
+import { Div } from './styled';
 
 export default function HomeSearch() {
 
     const [input, setInput] = useState('');
+    const [filter, setFilter] = useState('false');
 
     return (
         <Div>
@@ -24,7 +25,7 @@ export default function HomeSearch() {
                 </h2>
                 <form>
                     <SearchInput setInput={setInput} input={input} placeholder="Enter the name in the planet" />
-                    <Link to={`/searchPage/${input}`}>
+                    <Link to={`/searchPage/${input}/${filter}`}>
                         <SearchButton icon='true'>
                             Search
                         </SearchButton>
@@ -37,11 +38,19 @@ export default function HomeSearch() {
                     </div>
                     <div className="icon-filter">
                         <MdExpandMore />
-                        <p>Name</p>
+                        <p id='name' onClick={() => {
+                            setFilter('false');
+                            document.getElementById('name').style.fontWeight = '700';
+                            document.getElementById('population').style.fontWeight = '400';
+                        }}>Name</p>
                     </div>
                     <div className="icon-filter">
                         <MdExpandMore />
-                        <p>Population</p>
+                        <p id='population' onClick={() => {
+                            setFilter('true');
+                            document.getElementById('name').style.fontWeight = '400';
+                            document.getElementById('population').style.fontWeight = '700';
+                        }}>Population</p>
                     </div>
                 </div>
             </div>

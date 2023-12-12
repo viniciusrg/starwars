@@ -8,7 +8,7 @@ export default function AppRoutes() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/searchPage/:planetName" element={<SearchPage />} />
+                <Route path="/searchPage/:planetInput/:filter" element={<SearchPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </BrowserRouter>

@@ -137,6 +137,15 @@ export const Div = styled.div`
         gap: 8px;
     }
 
+    #name, #population {
+        cursor: pointer;
+        font-weight: 400;
+    }
+
+    #name {
+        font-weight: 700;
+    }
+
     .icon-filter:first{
         font-weight: 700;
     }
